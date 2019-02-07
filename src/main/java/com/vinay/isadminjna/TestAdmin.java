@@ -19,7 +19,7 @@ public class TestAdmin {
 
    };
     public static void main(String[] args) {
-        boolean isAdmin = Arrays.asList(Advapi32Util.getCurrentUserGroups()).stream().anyMatch(isAdminGroup);
+        boolean isAdmin = Arrays.stream(Advapi32Util.getCurrentUserGroups()).anyMatch(isAdminGroup);
         System.out.println(isAdmin);
         Arrays.asList(Advapi32Util.getCurrentUserGroups()).forEach(accountConsumer);
 
