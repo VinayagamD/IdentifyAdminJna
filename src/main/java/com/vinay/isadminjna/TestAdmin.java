@@ -19,6 +19,7 @@ public class TestAdmin {
 
    };
     public static void main(String[] args) {
+        System.out.println("WinNt = "+WinNT.WELL_KNOWN_SID_TYPE.WinBuiltinAdministratorsSid);
         boolean isAdmin = Arrays.stream(Advapi32Util.getCurrentUserGroups()).anyMatch(isAdminGroup);
         System.out.println(isAdmin);
         Arrays.asList(Advapi32Util.getCurrentUserGroups()).forEach(accountConsumer);
